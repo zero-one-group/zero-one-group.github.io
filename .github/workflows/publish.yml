@@ -48,7 +48,7 @@ jobs:
         with:
           # Automatically inject basePath in your Next.js configuration file and disable
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          static_site_generator: next
+          static_site_generator: false
 
       - name: Restore cache
         uses: actions/cache@v4
