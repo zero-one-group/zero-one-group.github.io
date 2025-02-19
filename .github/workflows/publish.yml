@@ -22,6 +22,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  NEXT_TELEMETRY_DISABLED: 1
+
 jobs:
   build:
     name: Build and upload
@@ -57,10 +60,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build Next.js (fumadocs)
-        run: pnpm run build
+        run: pnpm next build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
