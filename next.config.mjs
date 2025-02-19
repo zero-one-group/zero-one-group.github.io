@@ -10,7 +10,7 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
-  images: { remotePatterns: [{ protocol: 'https', hostname: '**' }] },
+  images: { unoptimized: true },
   eslint: { ignoreDuringBuilds: isProduction },
   typescript: { ignoreBuildErrors: isProduction },
   logging: { fetches: { fullUrl: true } },
