@@ -10,11 +10,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-env:
-  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: true
-  LEFTHOOK: 0
-  CI: true
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -66,8 +61,6 @@ jobs:
 
       - name: Build Next.js (fumadocs)
         run: pnpm run build
-        env:
-          NODE_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
