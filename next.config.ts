@@ -1,18 +1,22 @@
 import { createMDX } from 'fumadocs-mdx/next'
-import { isProduction } from 'std-env'
+import type { NextConfig } from 'next'
 
 const withMDX = createMDX()
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   output: 'export',
   cleanDistDir: true,
   reactStrictMode: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
-  images: { remotePatterns: [{ protocol: 'https', hostname: '**' }] },
-  eslint: { ignoreDuringBuilds: isProduction },
-  typescript: { ignoreBuildErrors: isProduction },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
   logging: { fetches: { fullUrl: true } },
 }
 
